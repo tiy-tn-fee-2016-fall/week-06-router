@@ -9,12 +9,7 @@
 
     <div class="main">
       <div class="container">
-        <template v-if="path === '/'">
-          <index-page :lunchSpots="lunchSpots"></index-page>
-        </template>
-        <template v-else>
-          <h2>NEW PAGE</h2>
-        </template>
+        <router-view :lunch-spots="lunchSpots"></router-view>
       </div>
     </div>
   </div>
