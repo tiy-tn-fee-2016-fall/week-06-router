@@ -3,6 +3,7 @@
     <div class="top-nav">
       <div class="container">
         <a href="/">All Lunch Spots</a>
+        <a href="/new">Recommend a New Spot!</a>
       </div>
     </div>
 
