@@ -1,6 +1,20 @@
 // @import 'yoga-sass/assets/yoga';
 // @import 'normalize-css/normalize';
 
-// $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
+$fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 @import 'font-awesome/scss/font-awesome';
 @import 'box-sizing';
+@import 'milligram/dist/milligram';
+
+body {
+  margin: 0;
+}
+
+.top-nav {
+  padding: 1rem;
+  background: #9b4dca;
+
+  a {
+    color: #fff;
+  }
+}
