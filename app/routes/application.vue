@@ -2,8 +2,8 @@
   <div class="">
     <div class="top-nav">
       <div class="container">
-        <a href="/">All Lunch Spots</a>
-        <a href="/new">Recommend a New Spot!</a>
+        <router-link to="/" class="button button-outline">All Lunch Spots</router-link>
+        <router-link to="/new" class="button button-outline">Recommend a New Spot!</router-link>
       </div>
     </div>
 

@@ -14,7 +14,8 @@ body {
   padding: 1rem;
   background: #9b4dca;
 
-  a {
+  .button.button-outline {
+    border-color: #fff;
     color: #fff;
   }
 }
