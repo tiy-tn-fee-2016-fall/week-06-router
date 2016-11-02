@@ -19,7 +19,9 @@
           <td>{{ item.city }}</td>
           <td>{{ item.zip }}</td>
           <td>{{ item.votes }}</td>
-          <td></td>
+          <td>
+
+          </td>
         </tr>
       </tbody>
     </table>

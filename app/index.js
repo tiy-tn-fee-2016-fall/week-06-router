@@ -8,6 +8,7 @@ import VueRouter from 'vue-router';
 import Application from './routes/application.vue';
 import Index from './routes/index.vue';
 import New from './routes/new.vue';
+import Detail from './routes/detail.vue';
 
 // Hooked in the Router to Vue.js
 Vue.use(VueRouter);
@@ -22,6 +23,11 @@ const routes = [
     path: '/new',
     name: 'new',
     component: New,
+  },
+  {
+    path: '/lunch-spots/:id',
+    name: 'detail',
+    component: Detail,
   },
 ];
 

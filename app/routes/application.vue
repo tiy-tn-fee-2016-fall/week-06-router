@@ -11,6 +11,7 @@
       <div class="container">
         <router-view
           :lunch-spots="lunchSpots"
+          :api-url="apiUrl"
           @addSpot="addSpot">
         </router-view>
       </div>
@@ -30,6 +31,7 @@ export default {
 
   data() {
     return {
+      apiUrl,
       lunchSpots: [],
       path: window.location.pathname,
     };
