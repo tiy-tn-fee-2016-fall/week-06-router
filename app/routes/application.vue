@@ -9,7 +9,10 @@
 
     <div class="main">
       <div class="container">
-        <router-view :lunch-spots="lunchSpots"></router-view>
+        <router-view
+          :lunch-spots="lunchSpots"
+          @addSpot="addSpot">
+        </router-view>
       </div>
     </div>
   </div>
@@ -42,6 +45,23 @@ export default {
         .then((r) => r.json())
         .then((lunchSpots) => {
           this.lunchSpots = lunchSpots;
+        });
+    },
+
+    addSpot(input) {
+      // Post our input data
+      fetch(apiUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(input),
+      })
+        .then((r) => r.json())
+        .then((lunchSpot) => {
+          // Then Add new lunchSpot to the list of lunchSpots
+          this.lunchSpots = [lunchSpot, ...this.lunchSpots];
+
+          // Redirect to the "index" named route
+          this.$router.push({ name: 'index' });
         });
     },
   },
