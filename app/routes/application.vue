@@ -12,7 +12,8 @@
         <router-view
           :lunch-spots="lunchSpots"
           :api-url="apiUrl"
-          @addSpot="addSpot">
+          @addSpot="addSpot"
+          @deleteSpot="deleteSpot">
         </router-view>
       </div>
     </div>
@@ -63,6 +64,19 @@ export default {
           this.lunchSpots = [lunchSpot, ...this.lunchSpots];
 
           // Redirect to the "index" named route
+          this.$router.push({ name: 'index' });
+        });
+    },
+
+    deleteSpot(lunchSpot) {
+      // Make a DELETE request
+      fetch(`${apiUrl}/${lunchSpot.id}`, {
+        method: 'DELETE',
+      })
+        .then(() => {
+          // Remove the lunch spot from our "local" lunchSpots data
+          this.lunchSpots = this.lunchSpots.filter((old) => old.id !== lunchSpot.id);
+
           this.$router.push({ name: 'index' });
         });
     },

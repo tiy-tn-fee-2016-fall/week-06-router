@@ -20,7 +20,9 @@
           <td>{{ item.zip }}</td>
           <td>{{ item.votes }}</td>
           <td>
-
+            <router-link :to="{ name: 'detail', params: { id: item.id } }">
+              MORE!!!
+            </router-link>
           </td>
         </tr>
       </tbody>

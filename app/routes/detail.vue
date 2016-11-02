@@ -1,6 +1,10 @@
 <template lang="html">
   <div class="">
     <h2>{{ lunchSpot.name }}</h2>
+
+    <button class="danger" @click="deleteSpot">
+      Green is not a Creative Colour
+    </button>
   </div>
 </template>
 
@@ -26,7 +30,16 @@ export default {
         .then((r) => r.json())
         .then((lunchSpot) => {
           this.lunchSpot = lunchSpot;
+        })
+        .catch(() => {
+          this.$router.push({ name: 'index' });
         });
+    },
+
+    deleteSpot() {
+      if (confirm('Are you sure')) {
+        this.$emit('deleteSpot', this.lunchSpot);
+      }
     },
   },
 };

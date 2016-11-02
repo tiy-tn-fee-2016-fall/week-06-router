@@ -27,3 +27,10 @@ body {
     justify-content: space-between;
   }
 }
+
+.button, button {
+  &.danger {
+    border-color: #b10;
+    background: #b10;
+  }
+}
